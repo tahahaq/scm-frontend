@@ -3,11 +3,11 @@ import { Header, Icon } from 'semantic-ui-react';
 
 const style = {
   marginTop: '40px',
-  fontSize: '40px'
+  fontSize: '36px'
 };
 
 const style2 = {
-  fontSize: '40px'
+  fontSize: '36px'
 };
 
 export default () => (

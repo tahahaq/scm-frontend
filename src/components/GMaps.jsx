@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
 
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyle = {
-  width: '100%',
-  height: '100%'
+  width: '90%',
+  height: '75%',
+  marginTop: '25px'
 };
 
 class GMaps extends Component {
@@ -32,26 +34,28 @@ class GMaps extends Component {
 
   render() {
     return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyle}
-        initialCenter={{ lat: -1.2884, lng: 36.8233 }}
-      >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'Kenyatta International Convention Centre'}
-        />
-        <InfoWindow
-          marker={this.state.activeMarker}
-          visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
+      <Container>
+        <Map
+          google={this.props.google}
+          style={mapStyle}
+          zoom={14}
+          initialCenter={{ lat: -1.2884, lng: 36.8233 }}
         >
-          <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-          </div>
-        </InfoWindow>
-      </Map>
+          <Marker
+            onClick={this.onMarkerClick}
+            name={'Kenyatta International Convention Centre'}
+          />
+          <InfoWindow
+            marker={this.state.activeMarker}
+            visible={this.state.showingInfoWindow}
+            onClose={this.onClose}
+          >
+            <div>
+              <h4>{this.state.selectedPlace.name}</h4>
+            </div>
+          </InfoWindow>
+        </Map>
+      </Container>
     );
   }
 }
