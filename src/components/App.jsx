@@ -5,6 +5,7 @@ import './App.css';
 import Header from './Header';
 import Search from './Search';
 import CardsBlock from './CardsBlock';
+import Heading from './Heading';
 
 class App extends Component {
   render() {
@@ -21,9 +22,14 @@ class App extends Component {
               <Search />
             </Grid.Column>
           </Grid.Row>
+        </Grid>
+        <Grid columns={2}>
           <Grid.Row>
             <Grid.Column>
               <CardsBlock />
+            </Grid.Column>
+            <Grid.Column>
+              <Heading />
             </Grid.Column>
           </Grid.Row>
         </Grid>
