@@ -5,7 +5,7 @@ export default () => {
   const style = {
     marginTop: '8px',
     fontSize: '60px',
-    marginBottom: '40px',
+    marginBottom: '36px',
     fontWeight: 'bold'
   };
 
