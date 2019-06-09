@@ -3,13 +3,14 @@ import { Header } from 'semantic-ui-react';
 
 export default () => {
   const style = {
-    marginTop: '5px',
-    fontSize: '60px'
+    marginTop: '8px',
+    fontSize: '60px',
+    marginBottom: '40px'
   };
 
   return (
     <div>
-      <Header className="header" style={style} as="h1" textAlign="center">
+      <Header className="header" style={style} as="h1">
         Wine Tracker
       </Header>
     </div>
