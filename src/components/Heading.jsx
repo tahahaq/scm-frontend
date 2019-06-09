@@ -2,7 +2,7 @@ import React from 'react';
 import { Header, Icon } from 'semantic-ui-react';
 
 const style = {
-  marginTop: '40px',
+  marginTop: '36px',
   fontSize: '36px'
 };
 
@@ -15,7 +15,7 @@ export default () => (
     <Header className="header" style={style} as="h1">
       2018 Bordeaux Malbec
     </Header>
-    <Header as="h3" textAlign="center">
+    <Header as="h3" textAlign="left">
       <span style={{ marginRight: '100px' }}>Strength:</span>15%
       <br />
       <span style={{ marginRight: '100px' }}>Additives:</span>None
@@ -25,7 +25,7 @@ export default () => (
       <Icon name="dropdown" />
       Grapes grown at vineyard1
     </Header>
-    <Header as="h3" textAlign="center">
+    <Header as="h3" textAlign="left">
       <span style={{ marginRight: '100px' }}>Altitude:</span>50m
       <br />
       <span style={{ marginRight: '100px' }}>Region:</span>Bordeaux
