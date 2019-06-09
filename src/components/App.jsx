@@ -4,12 +4,13 @@ import './App.css';
 
 import Header from './Header';
 import Search from './Search';
+import CardsBlock from './CardsBlock';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Grid columns={2} textAlign="center">
+        <Grid columns={1} textAlign="center">
           <Grid.Row>
             <Grid.Column>
               <Header />
@@ -18,6 +19,11 @@ class App extends Component {
           <Grid.Row>
             <Grid.Column>
               <Search />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <CardsBlock />
             </Grid.Column>
           </Grid.Row>
         </Grid>
