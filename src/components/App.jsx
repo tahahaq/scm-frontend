@@ -7,7 +7,9 @@ import Search from './Search';
 import CardsBlock from './CardsBlock';
 import Heading from './Heading';
 
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+// import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+
+import GMaps from './GMaps';
 
 const mapStyle = {
   width: '100%',
@@ -15,6 +17,28 @@ const mapStyle = {
 };
 
 class App extends Component {
+  state = {
+    showingInfoWindow: false, //Hides or the shows the infoWindow
+    activeMarker: {}, //Shows the active marker upon click
+    selectedPlace: {} //Shows the infoWindow to the selected place upon a marker
+  };
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+
+  onClose = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
+
   render() {
     return (
       // <div>
@@ -41,16 +65,11 @@ class App extends Component {
       //     </Grid.Row>
       //   </Grid>
       // </div>
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyle}
-        initialCenter={{ lat: -1.2884, lng: 36.8233 }}
-      />
+      <div>
+        <GMaps />
+      </div>
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA6VvqBRTsFFIWcpRrpJEKMy1D1Pigl_io'
-})(App);
+export default App;
