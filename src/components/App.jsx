@@ -6,6 +6,7 @@ import Header from './Header';
 import Search from './Search';
 import CardsBlock from './CardsBlock';
 import Heading from './Heading';
+import Tabs from './Tabs';
 
 // import GMaps from './GMaps';
 
@@ -34,17 +35,19 @@ class App extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <Grid columns={2}>
+        {/* <Grid columns={2}>
           <Grid.Row>
             <Grid.Column>
               <CardsBlock />
             </Grid.Column>
             <Grid.Column>
               <Heading />
-              {/* <GMaps /> */}
+              <GMaps />
             </Grid.Column>
           </Grid.Row>
-        </Grid>
+        </Grid> */}
+        <br />
+        <Tabs />
       </div>
     );
   }
