@@ -5,7 +5,12 @@ const style = {
   width: '550px'
 };
 
-const Search = () => (
+let inputValue;
+const setInputValue = value => {
+  inputValue = value;
+};
+
+const Search = props => (
   <Input
     style={style}
     size="huge"
@@ -15,8 +20,13 @@ const Search = () => (
     iconPosition="left"
   >
     <Icon name="search" />
-    <input />
-    <Button primary size="huge" type="submit">
+    <input onInput={e => setInputValue(e.target.value)} />
+    <Button
+      primary
+      onClick={() => props.getData(inputValue)}
+      size="huge"
+      type="submit"
+    >
       Search
     </Button>
   </Input>

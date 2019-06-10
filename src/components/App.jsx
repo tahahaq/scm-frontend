@@ -7,11 +7,13 @@ import Search from './Search';
 import CardsBlock from './CardsBlock';
 import Heading from './Heading';
 
-import GMaps from './GMaps';
+// import GMaps from './GMaps';
 
 class App extends Component {
-  componentDidMount() {
-    fetch('http://35.196.122.116:8080/participant/food/12')
+  getData(inputValue) {
+    // console.log(inputValue);
+    // console.log(typeof inputValue);
+    fetch(`http://35.196.122.116:8080/participant/food/${inputValue}`)
       .then(response => response.json())
       .then(result => console.log(result))
       .catch(error => console.log(error));
@@ -28,7 +30,7 @@ class App extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column>
-              <Search />
+              <Search getData={this.getData} />
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -39,7 +41,7 @@ class App extends Component {
             </Grid.Column>
             <Grid.Column>
               <Heading />
-              <GMaps />
+              {/* <GMaps /> */}
             </Grid.Column>
           </Grid.Row>
         </Grid>
