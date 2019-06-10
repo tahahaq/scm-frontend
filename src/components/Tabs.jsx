@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Container, Accordion, Icon } from 'semantic-ui-react';
 
 export default class AccordionExampleFluid extends Component {
-  state = { activeIndex: 0 };
+  // state = { activeIndex: 0 };
+  state = { activeIndex: null };
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -24,7 +25,7 @@ export default class AccordionExampleFluid extends Component {
             onClick={this.handleClick}
           >
             <Icon name="dropdown" />
-            What is a dog?
+            Coop
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 0}>
             <p>
@@ -40,7 +41,7 @@ export default class AccordionExampleFluid extends Component {
             onClick={this.handleClick}
           >
             <Icon name="dropdown" />
-            What kinds of dogs are there?
+            Farm & Farmer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 1}>
             <p>
@@ -57,9 +58,30 @@ export default class AccordionExampleFluid extends Component {
             onClick={this.handleClick}
           >
             <Icon name="dropdown" />
-            How do you acquire a dog?
+            Retailer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 2}>
+            <p>
+              Three common ways for a prospective owner to acquire a dog is from
+              pet shops, private owners, or shelters.
+            </p>
+            <p>
+              A pet shop may be the most convenient way to buy a dog. Buying a
+              dog from a private owner allows you to assess the pedigree and
+              upbringing of your dog before choosing to take it home. Lastly,
+              finding your dog from a shelter, helps give a good home to a dog
+              who may not find one so readily.
+            </p>
+          </Accordion.Content>
+          <Accordion.Title
+            active={activeIndex === 3}
+            index={3}
+            onClick={this.handleClick}
+          >
+            <Icon name="dropdown" />
+            Transporter
+          </Accordion.Title>
+          <Accordion.Content active={activeIndex === 3}>
             <p>
               Three common ways for a prospective owner to acquire a dog is from
               pet shops, private owners, or shelters.
