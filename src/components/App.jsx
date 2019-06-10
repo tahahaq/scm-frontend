@@ -4,11 +4,7 @@ import './App.css';
 
 import Header from './Header';
 import Search from './Search';
-// import CardsBlock from './CardsBlock';
-// import Heading from './Heading';
 import Tabs from './Tabs';
-
-// import GMaps from './GMaps';
 
 class App extends Component {
   constructor(props) {
@@ -23,20 +19,27 @@ class App extends Component {
 
   getData(inputValue) {
     // console.log(inputValue);
-    // console.log(typeof inputValue);
+
     fetch(`http://35.196.122.116:8080/participant/food/${inputValue}`)
       .then(response => response.json())
       .then(result => {
         const data = result.data.result;
         console.log(data);
-        this.setState({ data });
+
+        this.setState({
+          data,
+          coop: data.coop,
+          farm: data.farm,
+          farmer: data.farmer,
+          retailer: data.retailer,
+          transporter: data.transporter
+        });
       })
       .catch(error => console.log(error));
   }
 
   render() {
-    const { data } = this.state;
-    // console.log(data);
+    const { coop, farm, farmer, retailer, transporter } = this.state;
 
     return (
       <div>
@@ -52,20 +55,15 @@ class App extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        {/* <Grid columns={2}>
-          <Grid.Row>
-            <Grid.Column>
-              <CardsBlock />
-            </Grid.Column>
-            <Grid.Column>
-              <Heading />
-              <GMaps />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid> */}
         <br />
-        {!data && <Tabs data={{}} />}
-        {data && <Tabs data={data} />}
+        <br />
+        <Tabs
+          coop={coop}
+          farm={farm}
+          farmer={farmer}
+          retailer={retailer}
+          transporter={transporter}
+        />
       </div>
     );
   }

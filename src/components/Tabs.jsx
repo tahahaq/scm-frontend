@@ -4,8 +4,7 @@ import { Container, Accordion, Icon } from 'semantic-ui-react';
 import Table from './Table';
 
 export default class AccordionExampleFluid extends Component {
-  // state = { activeIndex: 0 };
-  state = { activeIndex: null };
+  state = { activeIndex: 0 };
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -30,7 +29,7 @@ export default class AccordionExampleFluid extends Component {
             Coop
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 0}>
-            <Table data={this.props.data.coop} />
+            <Table data={this.props.coop} />
           </Accordion.Content>
 
           <Accordion.Title
@@ -42,9 +41,7 @@ export default class AccordionExampleFluid extends Component {
             Farm & Farmer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 1}>
-            <Table
-              data={{ ...this.props.data.farm, ...this.props.data.farmer }}
-            />
+            <Table data={{ ...this.props.farm, ...this.props.farmer }} />
           </Accordion.Content>
 
           <Accordion.Title
@@ -56,7 +53,7 @@ export default class AccordionExampleFluid extends Component {
             Retailer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 2}>
-            <Table data={this.props.data.retailer} />
+            <Table data={this.props.retailer} />
           </Accordion.Content>
           <Accordion.Title
             active={activeIndex === 3}
@@ -67,7 +64,7 @@ export default class AccordionExampleFluid extends Component {
             Transporter
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 3}>
-            <Table data={this.props.data.transporter} />
+            <Table data={this.props.transporter} />
           </Accordion.Content>
         </Accordion>
       </Container>

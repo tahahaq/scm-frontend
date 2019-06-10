@@ -5,8 +5,6 @@ export default props => {
   let keys = [];
   if (props.data) {
     keys = Object.keys(props.data);
-    console.log(Object.keys(props.data));
-    // console.log(props.data);
   }
 
   return (
