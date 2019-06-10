@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Container } from 'semantic-ui-react';
-import './App.css';
 
 import Header from './Header';
 import Search from './Search';
@@ -13,8 +12,8 @@ class App extends Component {
 
     this.state = {
       data: null,
-      latitude: 24.8657937,
-      longitude: 67.0899424
+      latitude: 35.186532,
+      longitude: 33.422643
     };
     this.getData = this.getData.bind(this);
   }
@@ -99,7 +98,7 @@ class App extends Component {
                 />
               </Grid.Column>
               <Grid.Column>
-                {/* <GMaps latitude={latitude} longitude={longitude} /> */}
+                <GMaps latitude={latitude} longitude={longitude} />
               </Grid.Column>
             </Grid.Row>
           </Grid>

@@ -12,7 +12,7 @@ export default () => {
   return (
     <div>
       <Header className="header" style={style} as="h1">
-        Wine Tracker
+        Peach Tracker
       </Header>
     </div>
   );

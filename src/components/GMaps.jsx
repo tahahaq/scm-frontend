@@ -6,7 +6,6 @@ import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 const mapStyle = {
   width: '100%',
   height: '100%'
-  // marginTop: '25px'
 };
 
 class GMaps extends Component {
@@ -47,7 +46,11 @@ class GMaps extends Component {
             lng: longitude
           }}
         >
-          <Marker onClick={this.onMarkerClick} name={'something'} />
+          <Marker
+            // position={{ latitude, longitude: -122.0 }}
+            onClick={this.onMarkerClick}
+            name={'Current location'}
+          />
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
