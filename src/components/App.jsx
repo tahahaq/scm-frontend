@@ -5,7 +5,7 @@ import './App.css';
 import Header from './Header';
 import Search from './Search';
 import Tabs from './Tabs';
-import GMaps from './GMaps';
+// import GMaps from './GMaps';
 
 class App extends Component {
   constructor(props) {

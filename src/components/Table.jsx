@@ -2,9 +2,15 @@ import React from 'react';
 import { Table } from 'semantic-ui-react';
 
 export default props => {
+  const { data } = props;
   let keys = [];
-  if (props.data) {
-    keys = Object.keys(props.data).sort();
+  if (data) {
+    keys = Object.keys(data).sort();
+
+    if (!isNaN(data.timestamp)) {
+      const formatedDate = new Date(Number(data.timestamp) * 1000);
+      data.timestamp = formatedDate.toDateString();
+    }
   }
 
   return (
@@ -26,7 +32,7 @@ export default props => {
           return (
             <Table.Row key={key}>
               <Table.Cell>{property.replace(/_/g, ' ')}</Table.Cell>
-              <Table.Cell>{props.data[key]}</Table.Cell>
+              <Table.Cell>{data[key]}</Table.Cell>
             </Table.Row>
           );
         })}
