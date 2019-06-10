@@ -33,7 +33,7 @@ class GMaps extends Component {
 
   render() {
     const { latitude, longitude } = this.props;
-    console.log(latitude, longitude);
+    // console.log(latitude, longitude);
 
     return (
       <Container>

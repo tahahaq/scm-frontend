@@ -25,7 +25,7 @@ class App extends Component {
         .then(response => response.json())
         .then(result => {
           const data = result.data.result;
-          console.log(data);
+          // console.log(data);
 
           this.setState({
             data,
@@ -49,7 +49,7 @@ class App extends Component {
       .then(response => response.json())
       .then(result => {
         const data = result.data.result;
-        console.log(data);
+        // console.log(data);
 
         this.setState({
           data,
