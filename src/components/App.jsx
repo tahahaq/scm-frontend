@@ -63,9 +63,7 @@ class App extends Component {
                   retailer={retailer}
                 />
               </Grid.Column>
-              <Grid.Column>
-                <GMaps />
-              </Grid.Column>
+              <Grid.Column>{/* <GMaps /> */}</Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>

@@ -4,7 +4,7 @@ import { Table } from 'semantic-ui-react';
 export default props => {
   let keys = [];
   if (props.data) {
-    keys = Object.keys(props.data);
+    keys = Object.keys(props.data).sort();
   }
 
   return (
@@ -18,9 +18,14 @@ export default props => {
 
       <Table.Body>
         {keys.map(key => {
+          const property = key.replace(
+            key.charAt(0),
+            key.charAt(0).toUpperCase()
+          );
+
           return (
             <Table.Row key={key}>
-              <Table.Cell>{key}</Table.Cell>
+              <Table.Cell>{property.replace(/_/g, ' ')}</Table.Cell>
               <Table.Cell>{props.data[key]}</Table.Cell>
             </Table.Row>
           );
