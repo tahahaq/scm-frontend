@@ -2,10 +2,12 @@ import React from 'react';
 import { Table } from 'semantic-ui-react';
 
 export default props => {
-  // if (props.data !== {}) {
-  // console.log(Object.keys(props.data));
-  // }
-  console.log(props.data);
+  let keys = [];
+  if (props.data) {
+    keys = Object.keys(props.data);
+    console.log(Object.keys(props.data));
+    // console.log(props.data);
+  }
 
   return (
     <Table celled>
@@ -17,18 +19,14 @@ export default props => {
       </Table.Header>
 
       <Table.Body>
-        <Table.Row>
-          <Table.Cell>Cell</Table.Cell>
-          <Table.Cell>Cell</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Cell</Table.Cell>
-          <Table.Cell>Cell</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Cell</Table.Cell>
-          <Table.Cell>Cell</Table.Cell>
-        </Table.Row>
+        {keys.map(key => {
+          return (
+            <Table.Row>
+              <Table.Cell>{key}</Table.Cell>
+              <Table.Cell>{props.data[key]}</Table.Cell>
+            </Table.Row>
+          );
+        })}
       </Table.Body>
     </Table>
   );
