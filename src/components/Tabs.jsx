@@ -42,7 +42,9 @@ export default class AccordionExampleFluid extends Component {
             Farm & Farmer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 1}>
-            <Table />
+            <Table
+              data={{ ...this.props.data.farm, ...this.props.data.farmer }}
+            />
           </Accordion.Content>
 
           <Accordion.Title
@@ -54,7 +56,7 @@ export default class AccordionExampleFluid extends Component {
             Retailer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 2}>
-            <Table />
+            <Table data={this.props.data.retailer} />
           </Accordion.Content>
           <Accordion.Title
             active={activeIndex === 3}
@@ -65,7 +67,7 @@ export default class AccordionExampleFluid extends Component {
             Transporter
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 3}>
-            <Table />
+            <Table data={this.props.data.transporter} />
           </Accordion.Content>
         </Accordion>
       </Container>

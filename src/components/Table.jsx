@@ -21,7 +21,7 @@ export default props => {
       <Table.Body>
         {keys.map(key => {
           return (
-            <Table.Row>
+            <Table.Row key={key}>
               <Table.Cell>{key}</Table.Cell>
               <Table.Cell>{props.data[key]}</Table.Cell>
             </Table.Row>
