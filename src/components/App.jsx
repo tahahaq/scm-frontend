@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 import './App.css';
 
 import Header from './Header';
 import Search from './Search';
 import Tabs from './Tabs';
+import GMaps from './GMaps';
 
 class App extends Component {
   constructor(props) {
@@ -43,27 +44,31 @@ class App extends Component {
 
     return (
       <div>
-        <Grid columns={1} textAlign="center">
-          <Grid.Row>
-            <Grid.Column>
-              <Header />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column>
-              <Search getData={this.getData} />
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-        <br />
-        <br />
-        <Tabs
-          farm={farm}
-          farmer={farmer}
-          coop={coop}
-          transporter={transporter}
-          retailer={retailer}
-        />
+        <Container textAlign="center">
+          <Header />
+          <Search getData={this.getData} />
+          <br />
+          <br />
+          <br />
+        </Container>
+        <Container>
+          <Grid columns={2}>
+            <Grid.Row>
+              <Grid.Column>
+                <Tabs
+                  farm={farm}
+                  farmer={farmer}
+                  coop={coop}
+                  transporter={transporter}
+                  retailer={retailer}
+                />
+              </Grid.Column>
+              <Grid.Column>
+                <GMaps />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Container>
       </div>
     );
   }

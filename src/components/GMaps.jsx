@@ -4,9 +4,9 @@ import { Container } from 'semantic-ui-react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyle = {
-  width: '80%',
-  height: '60%',
-  marginTop: '25px'
+  width: '100%',
+  height: '100%'
+  // marginTop: '25px'
 };
 
 class GMaps extends Component {
