@@ -5,17 +5,42 @@ import './App.css';
 import Header from './Header';
 import Search from './Search';
 import Tabs from './Tabs';
-// import GMaps from './GMaps';
+import GMaps from './GMaps';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: null
+      data: null,
+      latitude: 24.8657937,
+      longitude: 67.0899424
     };
-
     this.getData = this.getData.bind(this);
+  }
+
+  componentDidMount() {
+    const path = window.location.pathname;
+    if (path.length > 1) {
+      fetch(`http://35.196.122.116:8080/participant/food${path}`)
+        .then(response => response.json())
+        .then(result => {
+          const data = result.data.result;
+          console.log(data);
+
+          this.setState({
+            data,
+            farm: data.farm,
+            farmer: data.farmer,
+            coop: data.coop,
+            transporter: data.transporter,
+            retailer: data.retailer,
+            latitude: Number(data.farm.co_ordinates.split(', ')[0]),
+            longitude: Number(data.farm.co_ordinates.split(', ')[1])
+          });
+        })
+        .catch(error => console.log(error));
+    }
   }
 
   getData(inputValue) {
@@ -33,14 +58,24 @@ class App extends Component {
           farmer: data.farmer,
           coop: data.coop,
           transporter: data.transporter,
-          retailer: data.retailer
+          retailer: data.retailer,
+          latitude: Number(data.farm.co_ordinates.split(', ')[0]),
+          longitude: Number(data.farm.co_ordinates.split(', ')[1])
         });
       })
       .catch(error => console.log(error));
   }
 
   render() {
-    const { farm, farmer, coop, transporter, retailer } = this.state;
+    const {
+      farm,
+      farmer,
+      coop,
+      transporter,
+      retailer,
+      latitude,
+      longitude
+    } = this.state;
 
     return (
       <div>
@@ -63,7 +98,9 @@ class App extends Component {
                   retailer={retailer}
                 />
               </Grid.Column>
-              <Grid.Column>{/* <GMaps /> */}</Grid.Column>
+              <Grid.Column>
+                {/* <GMaps latitude={latitude} longitude={longitude} /> */}
+              </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>

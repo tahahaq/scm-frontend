@@ -33,18 +33,21 @@ class GMaps extends Component {
   };
 
   render() {
+    const { latitude, longitude } = this.props;
+    console.log(latitude, longitude);
+
     return (
       <Container>
         <Map
           google={this.props.google}
           style={mapStyle}
-          zoom={14}
-          initialCenter={{ lat: -1.2884, lng: 36.8233 }}
+          zoom={12}
+          initialCenter={{
+            lat: latitude,
+            lng: longitude
+          }}
         >
-          <Marker
-            onClick={this.onMarkerClick}
-            name={'Kenyatta International Convention Centre'}
-          />
+          <Marker onClick={this.onMarkerClick} name={'something'} />
           <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
