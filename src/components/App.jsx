@@ -7,7 +7,6 @@ import Search from './Search';
 // import CardsBlock from './CardsBlock';
 // import Heading from './Heading';
 import Tabs from './Tabs';
-import Table from './Table';
 
 // import GMaps from './GMaps';
 
@@ -49,8 +48,6 @@ class App extends Component {
         </Grid> */}
         <br />
         <Tabs />
-        <br />
-        <Table />
       </div>
     );
   }
