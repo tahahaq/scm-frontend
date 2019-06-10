@@ -11,16 +11,29 @@ import Tabs from './Tabs';
 // import GMaps from './GMaps';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: null
+    };
+
+    this.getData = this.getData.bind(this);
+  }
+
   getData(inputValue) {
     // console.log(inputValue);
     // console.log(typeof inputValue);
     fetch(`http://35.196.122.116:8080/participant/food/${inputValue}`)
       .then(response => response.json())
-      .then(result => console.log(result))
+      .then(result => this.setState({ data: result.data.result }))
       .catch(error => console.log(error));
   }
 
   render() {
+    const { data } = this.state;
+    // console.log(data);
+
     return (
       <div>
         <Grid columns={1} textAlign="center">
@@ -47,7 +60,8 @@ class App extends Component {
           </Grid.Row>
         </Grid> */}
         <br />
-        <Tabs />
+        {!data && <Tabs data={{}} />}
+        {data && <Tabs data={data} />}
       </div>
     );
   }

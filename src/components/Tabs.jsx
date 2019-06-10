@@ -30,7 +30,7 @@ export default class AccordionExampleFluid extends Component {
             Coop
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 0}>
-            <Table />
+            <Table data={this.props.data.coop} />
           </Accordion.Content>
 
           <Accordion.Title
