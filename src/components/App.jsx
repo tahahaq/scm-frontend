@@ -10,6 +10,13 @@ import Heading from './Heading';
 import GMaps from './GMaps';
 
 class App extends Component {
+  componentDidMount() {
+    fetch('http://35.196.122.116:8080/participant/food/12')
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log(error));
+  }
+
   render() {
     return (
       <div>
