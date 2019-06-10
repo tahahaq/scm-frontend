@@ -26,10 +26,10 @@ export default class AccordionExampleFluid extends Component {
             onClick={this.handleClick}
           >
             <Icon name="dropdown" />
-            Coop
+            Farm & Farmer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 0}>
-            <Table data={this.props.coop} />
+            <Table data={{ ...this.props.farm, ...this.props.farmer }} />
           </Accordion.Content>
 
           <Accordion.Title
@@ -38,10 +38,10 @@ export default class AccordionExampleFluid extends Component {
             onClick={this.handleClick}
           >
             <Icon name="dropdown" />
-            Farm & Farmer
+            Cooperation
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 1}>
-            <Table data={{ ...this.props.farm, ...this.props.farmer }} />
+            <Table data={this.props.coop} />
           </Accordion.Content>
 
           <Accordion.Title
@@ -50,21 +50,22 @@ export default class AccordionExampleFluid extends Component {
             onClick={this.handleClick}
           >
             <Icon name="dropdown" />
-            Retailer
+            Transporter
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 2}>
-            <Table data={this.props.retailer} />
+            <Table data={this.props.transporter} />
           </Accordion.Content>
+
           <Accordion.Title
             active={activeIndex === 3}
             index={3}
             onClick={this.handleClick}
           >
             <Icon name="dropdown" />
-            Transporter
+            Retailer
           </Accordion.Title>
           <Accordion.Content active={activeIndex === 3}>
-            <Table data={this.props.transporter} />
+            <Table data={this.props.retailer} />
           </Accordion.Content>
         </Accordion>
       </Container>

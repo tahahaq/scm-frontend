@@ -28,18 +28,18 @@ class App extends Component {
 
         this.setState({
           data,
-          coop: data.coop,
           farm: data.farm,
           farmer: data.farmer,
-          retailer: data.retailer,
-          transporter: data.transporter
+          coop: data.coop,
+          transporter: data.transporter,
+          retailer: data.retailer
         });
       })
       .catch(error => console.log(error));
   }
 
   render() {
-    const { coop, farm, farmer, retailer, transporter } = this.state;
+    const { farm, farmer, coop, transporter, retailer } = this.state;
 
     return (
       <div>
@@ -58,11 +58,11 @@ class App extends Component {
         <br />
         <br />
         <Tabs
-          coop={coop}
           farm={farm}
           farmer={farmer}
-          retailer={retailer}
+          coop={coop}
           transporter={transporter}
+          retailer={retailer}
         />
       </div>
     );
