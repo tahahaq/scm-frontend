@@ -67,5 +67,5 @@ class GMaps extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA6VvqBRTsFFIWcpRrpJEKMy1D1Pigl_io'
+  apiKey: 'YOUR_API_KEY'
 })(GMaps);
