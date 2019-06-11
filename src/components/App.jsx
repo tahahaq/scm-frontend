@@ -21,24 +21,7 @@ class App extends Component {
   componentDidMount() {
     const path = window.location.pathname;
     if (path.length > 1) {
-      fetch(`http://35.196.122.116:8080/participant/food${path}`)
-        .then(response => response.json())
-        .then(result => {
-          const data = result.data.result;
-          // console.log(data);
-
-          this.setState({
-            data,
-            farm: data.farm,
-            farmer: data.farmer,
-            coop: data.coop,
-            transporter: data.transporter,
-            retailer: data.retailer,
-            latitude: Number(data.farm.co_ordinates.split(', ')[0]),
-            longitude: Number(data.farm.co_ordinates.split(', ')[1])
-          });
-        })
-        .catch(error => console.log(error));
+      this.getData(path.replace('/', ''));
     }
   }
 
