@@ -20,8 +20,12 @@ class App extends Component {
 
   componentDidMount() {
     const path = window.location.pathname;
+    const hash = window.location.hash;
+
     if (path.length > 1) {
       this.getData(path.replace('/', ''));
+    } else if (hash.length > 0) {
+      this.getData(hash.replace('#', ''));
     }
   }
 
