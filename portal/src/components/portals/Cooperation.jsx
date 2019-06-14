@@ -47,7 +47,7 @@ export default class extends Component {
       .then(res => {
         // console.log(res);
         swal({
-          text: 'Your request has been send for confirmation!'
+          text: 'Data has been successfully added to blockchain'
         });
       })
       .catch(err => {
