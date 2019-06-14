@@ -85,7 +85,6 @@ class App extends Component {
                 />
               </Grid.Column>
               <Grid.Column>
-                <h1>The origin of fruit</h1>
                 <GMaps latitude={latitude} longitude={longitude} />
               </Grid.Column>
             </Grid.Row>
