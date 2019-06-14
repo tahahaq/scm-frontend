@@ -49,7 +49,7 @@ class GMaps extends Component {
           <Marker
             // position={{ latitude, longitude: -122.0 }}
             onClick={this.onMarkerClick}
-            name={'Current location'}
+            name={'Fruit origin'}
           />
           <InfoWindow
             marker={this.state.activeMarker}
